@@ -18,6 +18,7 @@
 
 // Module dependencies
 var express = require('express');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var path = require('path');
 
@@ -27,6 +28,7 @@ module.exports = function(app) {
   require('ejs').delimiter = '$';
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
+  app.use(cors());
   app.enable('trust proxy');
 
   // Setup static public directory
